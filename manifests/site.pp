@@ -58,9 +58,9 @@ node default {
   include hub
   include nginx
   include sublime_text
-  include postgresql
   include skype
   include ruby
+  include spotify
 
   class { 'ruby::global':
     version => '2.1.2'
