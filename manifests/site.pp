@@ -58,7 +58,13 @@ node default {
   include hub
   include nginx
   include sublime_text
+  include postgresql
+  include skype
+  include ruby
 
+  class { 'ruby::global':
+    version => '2.1.2'
+  }
 
   sublime_text::package { 'Emmet':
     source => 'sergeche/emmet-sublime'
@@ -71,9 +77,6 @@ node default {
 
   # node versions
   include nodejs::v0_10
-
-  # default ruby versions
-  ruby::version { '2.1.2': }
 
   # common, useful packages
   package {
